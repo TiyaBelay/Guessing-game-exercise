@@ -3,12 +3,13 @@ from random import randint
 
 greeting = raw_input("Hello, what is your name? ")
 
-guesses = []
-comp_guess = randint(1,100)
 
-print "%s, I'm thinking of a number between 1 and 100." % (greeting)
 
 def guessing_game():
+    guesses = []
+    comp_guess = randint(1,100)
+
+    print "%s, I'm thinking of a number between 1 and 100." % (greeting)
     while True:
         try:
             player_guess = int(raw_input("Try to guess my number. "))
@@ -34,9 +35,9 @@ def guessing_game():
 guessing_game()
 
 
-        # play_again = raw_input("Would you like to play again? ")
-
-        # if play_again == " y":
-            
-        # else:
-        #     break
+while True: 
+    play_again = raw_input("Would you like to play again? ")
+    if play_again == "y":
+        guessing_game()
+    elif play_again == "n":
+        break
