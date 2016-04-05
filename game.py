@@ -3,10 +3,21 @@ from random import randint
 
 greeting = raw_input("Hello, what is your name? ")
 
-player_guesses = []
-comp_guesses = randint(1,100)
+guesses = []
+comp_guess = randint(1,100)
 
 print "%s, I'm thinking of a number between 1 and 100." % (greeting)
-player_prompt = int(raw_input("Try to guess my number. "))
 
-# while True:
+
+while True:
+    player_guess = int(raw_input("Try to guess my number. "))
+
+    guesses.append(player_guess)
+
+    if player_guess == comp_guess:
+        print "Congratulations, %s!" % (greeting)
+        break
+    elif player_guess > comp_guess:
+        print "Your guess is too high. try again!"
+    elif player_guess < comp_guess:
+        print "Your guess is too low. try again!"     
