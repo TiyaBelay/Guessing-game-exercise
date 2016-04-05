@@ -15,7 +15,7 @@ while True:
     guesses.append(player_guess)
 
     if player_guess == comp_guess:
-        print "Congratulations, %s!" % (greeting)
+        print "Congratulations, %s! You found my number in %s tries!" % (greeting, len(guesses))
         break
     elif player_guess > comp_guess:
         print "Your guess is too high. try again!"
